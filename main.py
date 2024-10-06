@@ -1,4 +1,3 @@
-import math
 from statistics import mode
 from statistics import median
 import numpy as np
@@ -12,7 +11,7 @@ first_number = [23, 25, 42, 34, 27, 19, 21, 34, 41]
 sr = 0
 for i in range(len(first_number)):
     sr += first_number[i]
-sr = sr/len(first_number) + 1
+sr = sr / len(first_number) + 1
 sr = 30.66667
 print(sr)
 alpha1 = 0.95
@@ -82,13 +81,17 @@ mid_square = np.std(arr)
 print("Среднее квадратическое отклонение: ", mid_square)
 
 # Коэффициент вариации 🍄
-cv = lambda x: np.std(x, ddof=1) / np.mean(x) * 100
+
+
+def cv(x): return np.std(x, ddof=1) / np.mean(x) * 100
+
+
 print("Коэффициент вариации: ", cv(arr))
 
 # Доверительный интервал 🌱
 
 # Для среднего времени обработки одной детали 🌿
-mean = np.mean((19+21+23+25+27+29)/6)
+mean = np.mean((19 + 21 + 23 + 25 + 27 + 29) / 6)
 std_err = st.sem(arr)
 loc = mean
 alpha = 0.99
@@ -99,7 +102,7 @@ print("99% доверительный интервал для среднего �
 # Для дисперсии ☘️
 mean = np.mean(dispersia)
 std_err = st.sem(arr)
-loc=mean
+loc = mean
 alpha = 0.99
 scale = std_err
 interval = st.norm.interval(alpha, loc, scale)
